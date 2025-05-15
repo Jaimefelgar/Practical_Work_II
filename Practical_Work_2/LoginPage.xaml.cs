@@ -1,19 +1,18 @@
-﻿using System;
+using System;
 using Microsoft.Maui.Controls;
 namespace Practical_Work_2
 {
 
-public partial class MainPage : ContentPage
+public partial class LoginPage : ContentPage
 {
 
-	public MainPage()
+	public LoginPage()
 	{
-        InitializeComponent();
+		InitializeComponent();
 	}
-
-	private async void LoginClicked(object sender, EventArgs e)
+		private async void LoginClicked(object sender, EventArgs e)
 	{
-		await Shell.Current.GoToAsync(nameof(LoginPage));
+		await Shell.Current.GoToAsync("//MainPage");
 	}
 	 private async void ExitClicked(object sender, EventArgs e)
     {
@@ -24,6 +23,6 @@ public partial class MainPage : ContentPage
         }
     }
 
-}
 
+}
 }
