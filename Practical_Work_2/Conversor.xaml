@@ -72,7 +72,9 @@
                 Clicked="OnNumberButtonClicked" 
                 CommandParameter="9"/>
 
-            <Button Text="DecimalToBinary" Grid.Row="0" Grid.Column="3"/>
+            <Button Text="DecimalToBinary" Grid.Row="0" Grid.Column="3"
+                Clicked="OnConversionButtonClicked"
+                CommandParameter="0"/>
 
 
             <Button Text="4" Grid.Row="1" Grid.Column="0"
@@ -84,7 +86,9 @@
             <Button Text="6" Grid.Row="1" Grid.Column="2"
                 Clicked="OnNumberButtonClicked" 
                 CommandParameter="6"/>
-            <Button Text="DecimalToTwoComplement" Grid.Row="1" Grid.Column="3"/>
+            <Button Text="DecimalToTwoComplement" Grid.Row="1" Grid.Column="3"
+                Clicked="OnConversionButtonClicked"
+            CommandParameter="1"/>
 
             <Button Text="1" Grid.Row="2" Grid.Column="0"
                 Clicked="OnNumberButtonClicked" 
@@ -95,7 +99,9 @@
             <Button Text="3" Grid.Row="2" Grid.Column="2"
                 Clicked="OnNumberButtonClicked" 
                 CommandParameter="3"/>
-            <Button Text="DecimalToOctal" Grid.Row="2" Grid.Column="3"/>
+            <Button Text="DecimalToOctal" Grid.Row="2" Grid.Column="3"
+                Clicked="OnConversionButtonClicked"
+                CommandParameter="2"/>
 
            
             <Button Text="AC" Grid.Row="3" Grid.Column="0"
@@ -106,7 +112,9 @@
             <Button Text="-" Grid.Row="3" Grid.Column="2"
                 Clicked="OnNumberButtonClicked" 
                 CommandParameter="-"/>
-            <Button Text="DecimalToHexadecimal" Grid.Row="3" Grid.Column="3"/>
+            <Button Text="DecimalToHexadecimal" Grid.Row="3" Grid.Column="3"
+                Clicked="OnConversionButtonClicked"
+            CommandParameter="3"/>
 
             
             <Button Text="A" Grid.Row="5" Grid.Column="0"
@@ -118,7 +126,9 @@
             <Button Text="C" Grid.Row="5" Grid.Column="2"
                 Clicked="OnNumberButtonClicked" 
                 CommandParameter="C"/>
-            <Button Text="BinaryToDecimal" Grid.Row="4" Grid.Column="3"/>
+            <Button Text="BinaryToDecimal" Grid.Row="4" Grid.Column="3"
+                Clicked="OnConversionButtonClicked"
+                CommandParameter="4"/>
 
             
             <Button Text="D" Grid.Row="6" Grid.Column="0"
@@ -130,12 +140,18 @@
             <Button Text="F" Grid.Row="6" Grid.Column="2"
                 Clicked="OnNumberButtonClicked" 
                 CommandParameter="F"/>
-            <Button Text="TwoComplementToDecimal" Grid.Row="5" Grid.Column="3"/>
+            <Button Text="TwoComplementToDecimal" Grid.Row="5" Grid.Column="3"
+                Clicked="OnConversionButtonClicked"
+        CommandParameter="5"/>
 
             
         
-            <Button Text="OctalToDecimal" Grid.Row="6" Grid.Column="3"/>
-            <Button Text="HexadecimalToDecimal" Grid.Row="7" Grid.Column="3"/>
+            <Button Text="OctalToDecimal" Grid.Row="6" Grid.Column="3"
+                Clicked="OnConversionButtonClicked"
+        CommandParameter="6"/>
+            <Button Text="HexadecimalToDecimal" Grid.Row="7" Grid.Column="3"
+                Clicked="OnConversionButtonClicked"
+        CommandParameter="7"/>
 
         </Grid>
 
