@@ -34,12 +34,10 @@
             
         </Grid>
 
-        <Entry x:Name="InputEntry"
-               HeightRequest="60"
-               FontSize="24"
-               BackgroundColor="White"
-               TextColor="Black"
-               HorizontalTextAlignment="End"/>
+        <Label x:Name="DisplayLabel" 
+               Text=""
+               FontSize="32"
+               HorizontalOptions="Center"/>
 
        
         <Grid ColumnSpacing="5" RowSpacing="5">
@@ -62,38 +60,76 @@
             </Grid.ColumnDefinitions>
 
             
-            <Button Text="7" Grid.Row="0" Grid.Column="0"/>
-            <Button Text="8" Grid.Row="0" Grid.Column="1"/>
-            <Button Text="9" Grid.Row="0" Grid.Column="2"/>
+            <Button Text="7" Grid.Row="0" Grid.Column="0" 
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="7"/>
+
+            <Button Text="8" Grid.Row="0" Grid.Column="1"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="8" />
+
+            <Button Text="9" Grid.Row="0" Grid.Column="2"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="9"/>
+
             <Button Text="DecimalToBinary" Grid.Row="0" Grid.Column="3"/>
 
 
-            <Button Text="4" Grid.Row="1" Grid.Column="0"/>
-            <Button Text="5" Grid.Row="1" Grid.Column="1"/>
-            <Button Text="6" Grid.Row="1" Grid.Column="2"/>
+            <Button Text="4" Grid.Row="1" Grid.Column="0"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="4"/>
+            <Button Text="5" Grid.Row="1" Grid.Column="1"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="5"/>
+            <Button Text="6" Grid.Row="1" Grid.Column="2"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="6"/>
             <Button Text="DecimalToTwoComplement" Grid.Row="1" Grid.Column="3"/>
 
-            <Button Text="1" Grid.Row="2" Grid.Column="0"/>
-            <Button Text="2" Grid.Row="2" Grid.Column="1"/>
-            <Button Text="3" Grid.Row="2" Grid.Column="2"/>
+            <Button Text="1" Grid.Row="2" Grid.Column="0"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="1"/>
+            <Button Text="2" Grid.Row="2" Grid.Column="1"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="2"/>
+            <Button Text="3" Grid.Row="2" Grid.Column="2"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="3"/>
             <Button Text="DecimalToOctal" Grid.Row="2" Grid.Column="3"/>
 
            
-            <Button Text="AC" Grid.Row="3" Grid.Column="0"/>
-            <Button Text="0" Grid.Row="3" Grid.Column="1"/>
-            <Button Text="-" Grid.Row="3" Grid.Column="2"/>
+            <Button Text="AC" Grid.Row="3" Grid.Column="0"
+                Clicked="AcClicked" />
+            <Button Text="0" Grid.Row="3" Grid.Column="1"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="0"/>
+            <Button Text="-" Grid.Row="3" Grid.Column="2"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="-"/>
             <Button Text="DecimalToHexadecimal" Grid.Row="3" Grid.Column="3"/>
 
             
-            <Button Text="A" Grid.Row="5" Grid.Column="0"/>
-            <Button Text="B" Grid.Row="5" Grid.Column="1"/>
-            <Button Text="C" Grid.Row="5" Grid.Column="2"/>
+            <Button Text="A" Grid.Row="5" Grid.Column="0"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="A"/>
+            <Button Text="B" Grid.Row="5" Grid.Column="1"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="B"/>
+            <Button Text="C" Grid.Row="5" Grid.Column="2"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="C"/>
             <Button Text="BinaryToDecimal" Grid.Row="4" Grid.Column="3"/>
 
             
-            <Button Text="D" Grid.Row="6" Grid.Column="0"/>
-            <Button Text="E" Grid.Row="6" Grid.Column="1"/>
-            <Button Text="F" Grid.Row="6" Grid.Column="2"/>
+            <Button Text="D" Grid.Row="6" Grid.Column="0"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="D"/>
+            <Button Text="E" Grid.Row="6" Grid.Column="1"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="E"/>
+            <Button Text="F" Grid.Row="6" Grid.Column="2"
+                Clicked="OnNumberButtonClicked" 
+                CommandParameter="F"/>
             <Button Text="TwoComplementToDecimal" Grid.Row="5" Grid.Column="3"/>
 
             
