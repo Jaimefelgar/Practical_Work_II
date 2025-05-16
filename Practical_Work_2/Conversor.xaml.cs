@@ -39,27 +39,53 @@ namespace Practical_Work_2
 
 			DisplayLabel.Text += number;
 		}
-		    private async void OnConversionButtonClicked(object sender, EventArgs e)
+		private async void OnConversionButtonClicked(object sender, EventArgs e)
+		{
+    		var button = (Button)sender;
+    		if (int.TryParse(button.CommandParameter?.ToString(), out int opIndex))
     		{
-        		var button = (Button)sender;
-        		if (int.TryParse(button.CommandParameter?.ToString(), out int opIndex))
+       			try
         		{
-            		try
-            		{			
-                		string input = DisplayLabel.Text;
-                
-                		// Validar y convertir
-                		string result = mainconverter.PerformConversion(opIndex+1, input); // +1 porque PerformConversion usa base 1
-                
-                		// Mostrar resultado
-               			DisplayLabel.Text = result;
-           			}
-            catch (Exception ex)
-            {
-                await DisplayAlert("Error", ex.Message, "OK");
-            }
-        }
-    }
+            		string input = DisplayLabel.Text;
+            		Conversion conversion = mainconverter.Operations[opIndex];
+            
+            		conversion.validate(input);
+            
+            		if (conversion.NeedBitSize())
+            		{
+                		string bitsStr = await DisplayPromptAsync(
+                    	"Configuración",
+                    	$"Bits requeridos para {conversion.GetName()}:",
+                    	"Aceptar",
+                    	"Cancelar",
+                    	maxLength: 3,
+                    	keyboard: Keyboard.Numeric
+                		);
+
+                	if (int.TryParse(bitsStr, out int bits) && bits > 0)
+                	{
+                    	DisplayLabel.Text = conversion.Change(input, bits);
+               		}
+                	else
+                	{
+                    	await DisplayAlert("Error", "Número de bits inválido", "OK");
+                	}
+            		}
+            		else
+            		{
+                	DisplayLabel.Text = conversion.Change(input);
+            		}
+        		}
+        		catch (ArgumentOutOfRangeException ex)
+        		{
+            		await DisplayAlert("Error", ex.Message, "OK");
+        		}
+        		catch (Exception ex)
+        		{
+          			await DisplayAlert("Error", ex.Message, "OK");
+        		}
+    		}
+    	}
 
 
 	}

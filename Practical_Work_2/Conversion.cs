@@ -18,7 +18,7 @@ namespace Practical_Work_2
             this.bitsize = false;
         }
 
-        public Conversion(string name, string definition, bool bitsize, InputValidator validaton)
+        public Conversion(string name, string definition, bool bitsize, InputValidator validator)
         {
             this.name = name;
             this.definition = definition;

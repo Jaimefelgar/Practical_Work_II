@@ -14,9 +14,9 @@ namespace Practical_Work_2
             operations = new List<Conversion>
             {
                 new DecimalToBinary("Binary", "Decimal to Binary"),
+                new DecimalToTwoComplement("TwoComplement", "Decimal to Two's Complement"),
                 new DecimalToOctal("Octal", "Decimal to Octal"),
                 new DecimalToHexadecimal("Hexadecimal", "Decimal to Hexadecimal"),
-                new DecimalToTwoComplement("TwoComplement", "Decimal to Two's Complement"),
                 new BinaryToDecimal("Decimal", "Binary to Decimal"),
                 new TwoComplementToDecimal("Decimal", "Two's Complement to Decimal"),
                 new OctalToDecimal("Decimal", "Octal to Decimal"),
