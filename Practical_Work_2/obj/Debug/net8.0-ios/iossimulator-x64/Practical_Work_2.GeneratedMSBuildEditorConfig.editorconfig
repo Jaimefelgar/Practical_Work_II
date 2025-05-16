@@ -28,6 +28,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Practical_Work_2.AppShell.
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
+[C:/Users/jaime/Documents/GitHub/Practical_Work_2/Practical_Work_2/Practical_Work_2/Conversor.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Practical_Work_2.Conversor.xaml
+build_metadata.AdditionalFiles.TargetPath = Conversor.xaml
+build_metadata.AdditionalFiles.RelativePath = Conversor.xaml
+
 [C:/Users/jaime/Documents/GitHub/Practical_Work_2/Practical_Work_2/Practical_Work_2/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Practical_Work_2.LoginPage.xaml

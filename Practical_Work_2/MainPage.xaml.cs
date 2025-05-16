@@ -23,6 +23,10 @@ public partial class MainPage : ContentPage
             Application.Current.Quit(); // Cierra la aplicación
         }
     }
+    private async void SigninClicked(object sender, EventArgs e)
+	{
+		await Shell.Current.GoToAsync(nameof(Conversor));
+	}
 
 }
 

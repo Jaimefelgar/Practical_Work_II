@@ -16,4 +16,9 @@
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="LoginPage" />
 
+    <ShellContent
+      
+        ContentTemplate="{DataTemplate local:Conversor}"
+        Route="Conversor" />
+
 </Shell>

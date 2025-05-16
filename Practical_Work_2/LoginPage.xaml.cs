@@ -10,7 +10,7 @@ public partial class LoginPage : ContentPage
 	{
 		InitializeComponent();
 	}
-		private async void LoginClicked(object sender, EventArgs e)
+	private async void LoginClicked(object sender, EventArgs e)
 	{
 		await Shell.Current.GoToAsync("//MainPage");
 	}
@@ -19,7 +19,7 @@ public partial class LoginPage : ContentPage
         bool confirm = await DisplayAlert("Exit", "¿Deseas salir de la aplicación?", "Sí", "No");
         if (confirm)
         {
-            Application.Current.Quit(); // Cierra la aplicación
+            Application.Current.Quit(); 
         }
     }
 

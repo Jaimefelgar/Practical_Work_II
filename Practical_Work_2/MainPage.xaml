@@ -42,7 +42,8 @@
         <Button Text="SIGN IN"
             BackgroundColor="#FF075497"
             TextColor="White"
-            HorizontalOptions="Center"/>
+            HorizontalOptions="Center"
+            Clicked="SigninClicked"/>
 
 
      </VerticalStackLayout>
