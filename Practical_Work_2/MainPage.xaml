@@ -8,10 +8,10 @@
     <Grid RowDefinitions="Auto, *"> 
 
              <HorizontalStackLayout HorizontalOptions="End" VerticalOptions="Start" Spacing="10" Margin="0,10,20,0">
-            <Button Text="Login" 
+            <Button Text="Register" 
                     BackgroundColor="Transparent"
                     TextColor="black"
-                    Clicked="LoginClicked"/>
+                    Clicked="RegisterClicked"/>
             
             <Button Text="Exit" 
                     BackgroundColor="Transparent"
@@ -26,17 +26,24 @@
                     FontSize="30"
                     TextColor="White"/>
             </Frame>
+             
        
 
         <VerticalStackLayout Spacing ="10" HorizontalOptions="CenterAndExpand">
             <Label Text="Username" FontSize="20" />
-            <Entry Placeholder="Enter your username" BackgroundColor="White"
+            <Entry x:Name="Username" Placeholder="Enter your username" BackgroundColor="White"
                 WidthRequest="200"/>
 
             <Label Text="Password" FontSize="20" />
-            <Entry Placeholder="Enter your Password" BackgroundColor="White"
+            <Entry x:Name="Password" Placeholder="Enter your Password" BackgroundColor="White"
                 WidthRequest="200"/>
-                
+
+                <Label Text="Forgot Password?" HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ForgotPasswordTapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+        
         </VerticalStackLayout>
 
         <Button Text="SIGN IN"

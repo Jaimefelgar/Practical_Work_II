@@ -9,6 +9,14 @@
         <Grid RowDefinitions ="Auto,*">
            
            <HorizontalStackLayout HorizontalOptions="End" Spacing="10" Margin="0,10">
+                
+                <Button Text="Operations" 
+                        BackgroundColor="transparent"
+                        TextColor="black"
+                        WidthRequest="80"
+                        Clicked="LogoutClicked" />
+                
+                
                 <Button Text="Logout" 
                         BackgroundColor="transparent"
                         TextColor="black"

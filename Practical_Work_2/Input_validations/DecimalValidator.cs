@@ -8,7 +8,7 @@ namespace Practical_Work_2
         {
             for (int i = 0; i < input.Length; i++)
             {
-                if (input[i] == '-' && i > 0)
+                if (input[i] == '-' && i >= 1)
                 {
                     throw new FormatException("Bad format: input is not a valid integer.");
                 }

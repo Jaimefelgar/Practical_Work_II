@@ -13,12 +13,16 @@
         Route="MainPage" />
     <ShellContent
       
-        ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="LoginPage" />
+        ContentTemplate="{DataTemplate local:RegisterPage}"
+        Route="RegisterPage" />
 
     <ShellContent
       
         ContentTemplate="{DataTemplate local:Conversor}"
         Route="Conversor" />
+        <ShellContent
+      
+        ContentTemplate="{DataTemplate local:ForgotPassword}"
+        Route="ForgotPassword" />
 
 </Shell>

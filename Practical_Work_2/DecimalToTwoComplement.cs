@@ -40,13 +40,13 @@ namespace Practical_Work_2
             int maxVal = (1 << (bits - 1)) - 1;
 
             if (number < minVal || number > maxVal)
-                throw new ArgumentOutOfRangeException(nameof(input),$"Number must fit within {size} bits");
+                throw new ArgumentOutOfRangeException(nameof(input),$"Number must fit within {bits} bits");
             
-            uint unsignedValue = (uint) number & ((1u << size) - 1);
+            uint unsignedValue = (uint) number & ((1u << bits) - 1);
 
-            string binaryString = Convert.ToString(unsignedValue, 2).PadLeft(size, '0');
+            string binaryString = Convert.ToString(unsignedValue, 2).PadLeft(bits, '0');
 
-            return binaryString.PadLeft(size, '0');
+            return binaryString.PadLeft(bits, '0');
         }
         
             

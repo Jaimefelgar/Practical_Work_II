@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Practical_Work_2.LoginPage"
+             x:Class="Practical_Work_2.RegisterPage"
              BackgroundColor="LightGray"
              >
              
@@ -11,7 +11,7 @@
             <Button Text="Sign in" 
                     BackgroundColor="Transparent"
                     TextColor="black"
-                    Clicked="LoginClicked"/>
+                    Clicked="OnSignInClicked"/>
             
             <Button Text="Exit" 
                     BackgroundColor="Transparent"
@@ -22,32 +22,52 @@
 
         <VerticalStackLayout Grid.Row="1" Padding="20" Spacing="20">
             <Frame BackgroundColor="#FF075497" Padding ="20">
-                <Label Text="Login" HorizontalOptions="Center"
+                <Label Text="Register" HorizontalOptions="Center"
                     FontSize="30"
                     TextColor="White"/>
             </Frame>
        
 
         <VerticalStackLayout Spacing ="10" HorizontalOptions="CenterAndExpand">
+            <Label Text="Name" FontSize="20" />
+            <Entry x:Name="Name"  Placeholder="Enter your name" BackgroundColor="White"
+                WidthRequest="200"/>
+
             <Label Text="Username" FontSize="20" />
-            <Entry Placeholder="Enter your username" BackgroundColor="White"
+            <Entry x:Name="Username" Placeholder="Enter your username" BackgroundColor="White"
                 WidthRequest="200"/>
 
             <Label Text="Password" FontSize="20" />
-            <Entry Placeholder="Enter your Password" BackgroundColor="White"
-                WidthRequest="200"/>
+            <Entry x:Name="Password" Placeholder="Enter your Password" BackgroundColor="White"
+                WidthRequest="200" IsPassword="True" />
 
             <Label Text="Repeat Password" FontSize="20" />
-            <Entry Placeholder="Enter your Password" BackgroundColor="White"
-                WidthRequest="200"/>
+            <Entry x:Name="RepeatPassword" Placeholder="Enter your Password" BackgroundColor="White"
+                WidthRequest="200" IsPassword="True"/>
+
+             <CheckBox x:Name="PolicyCheckBox" Color="#FF075497"/>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="I agree to the "/>
+                    <Span Text="privacy policy" 
+                          TextColor="Blue"
+                          TextDecorations="Underline">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="PrivacyPolicyTapped"/>
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
                 
         </VerticalStackLayout>
 
-        <Button Text="LOG IN"
+        <Button Text="REGISTER"
             BackgroundColor="#FF075497"
             TextColor="White"
             HorizontalOptions="Center"
-            Clicked="LoginClicked"/>
+            Clicked="RegisterClicked"/>
 
 
         </VerticalStackLayout>
