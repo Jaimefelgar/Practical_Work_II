@@ -5,7 +5,7 @@ namespace Practical_Work_2
 {
     public partial class ForgotPassword : ContentPage
     {
-        private readonly string _usersFile = Path.Combine(FileSystem.AppDataDirectory, "users.csv");
+      private readonly string _usersFile = Path.Combine(Directory.GetCurrentDirectory(), "users.csv");
         
         public ForgotPassword()
         {

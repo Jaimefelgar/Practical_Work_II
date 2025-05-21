@@ -6,15 +6,22 @@ namespace Practical_Work_2
     {
         public  override void validate(string input)
         {
-            for (int i = 0; i < input.Length; i++)
+            if (string.IsNullOrEmpty(input))
+                throw new FormatException("Bad Format: Empty input");
+
+            bool isNegative = input[0] == '-';
+            int startIndex = isNegative ? 1 : 0;
+
+            // Validar formato del signo negativo
+            if (isNegative && input.Length == 1)
+                throw new FormatException("Bad Format: not valid number");
+
+            // Validar caracteres válidos
+            for (int i = startIndex; i < input.Length; i++)
             {
-                if (input[i] == '-' && i >= 1)
+                if (!char.IsDigit(input[i]))
                 {
-                    throw new FormatException("Bad format: input is not a valid integer.");
-                }
-                else if (!char.IsDigit(input[i]))
-                {
-                    throw new FormatException("Bad format: input is not a valid integer.");
+                    throw new FormatException("Batd Format: not valid integer");
                 }
             }
         }

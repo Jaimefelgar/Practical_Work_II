@@ -20,9 +20,16 @@
       
         ContentTemplate="{DataTemplate local:Conversor}"
         Route="Conversor" />
-        <ShellContent
+
+    <ShellContent
       
         ContentTemplate="{DataTemplate local:ForgotPassword}"
         Route="ForgotPassword" />
 
+        <ShellContent
+      
+        ContentTemplate="{DataTemplate local:Operations}"
+        Route="Operations" />
+
+    
 </Shell>

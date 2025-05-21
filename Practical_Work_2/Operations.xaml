@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practical_Work_2.Operations"
+             BackgroundColor="LightGray">
+    
+    <Grid RowDefinitions="Auto, *">
+        <HorizontalStackLayout HorizontalOptions="End" VerticalOptions="Start" Spacing="10" Margin="0,10,20,0">
+            <Button Text="Back" 
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    Clicked="BackButtonClicked"/>
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1" Padding="20" Spacing="20">
+            <Frame BackgroundColor="#FF075497" Padding="20">
+                <Label Text="Operations" 
+                       HorizontalOptions="Center"
+                       FontSize="30"
+                       TextColor="White"/>
+            </Frame>
+
+            <VerticalStackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
+                <Label x:Name="lblName" FontSize="20"/>
+                <Label x:Name="lblUsername" FontSize="20"/>
+                <Label x:Name="lblPassword" FontSize="20"/>
+                <Label x:Name="lblOperations" FontSize="20"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
