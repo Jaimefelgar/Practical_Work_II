@@ -36,7 +36,8 @@
 
             <Label Text="Password" FontSize="20" />
             <Entry x:Name="Password" Placeholder="Enter your Password" BackgroundColor="White"
-                WidthRequest="200"/>
+                WidthRequest="200"
+                 />
 
                 <Label Text="Forgot Password?" HorizontalOptions="Center">
             <Label.GestureRecognizers>

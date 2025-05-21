@@ -5,7 +5,7 @@ namespace Practical_Work_2
 
 	public partial class MainPage : ContentPage
 	{
-		private const string Usersfile = "users.csv";
+		private readonly string _usersFile = Path.Combine(FileSystem.AppDataDirectory, "users.csv");
 		public MainPage()
 		{
 			InitializeComponent();
@@ -25,14 +25,15 @@ namespace Practical_Work_2
 		}
 		private async void SigninClicked(object sender, EventArgs e)
 		{
-			var users = File.Exists(Usersfile) ? File.ReadAllLines(Usersfile) : Array.Empty<string>();
+			var users = File.Exists(_usersFile) ? File.ReadAllLines(_usersFile) : Array.Empty<string>();
 
 			var user = users.FirstOrDefault(u =>
 				u.Split(',')[1] == Username.Text &&
-				u.Split(',')[3] == Password.Text);
-
+				u.Split(',')[2] == Password.Text);
+				
 			if (user != null)
 			{
+				Preferences.Set("currentUser", Username.Text);
 				await Shell.Current.GoToAsync(nameof(Conversor));
 			}
 			else

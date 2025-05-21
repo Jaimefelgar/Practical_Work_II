@@ -5,7 +5,7 @@ namespace Practical_Work_2
 
 	public partial class RegisterPage : ContentPage
 	{
-		private const string Usersfile = "users.csv";
+		private readonly string Usersfile = Path.Combine(FileSystem.AppDataDirectory, "users.csv");
 		public RegisterPage()
 		{
 			InitializeComponent();
@@ -37,6 +37,18 @@ namespace Practical_Work_2
 				return false;
 			}
 
+			if (!PasswordValidator.IsValid(Password.Text))
+			{
+				DisplayAlert("Error", "La contraseña debe tener 8+ caracteres, mayúscula, minúscula, número y símbolo", "OK");
+				return false;
+			}
+			if (!PolicyCheckBox.IsChecked)
+    		{
+        		DisplayAlert("Error", "Debes aceptar la política de privacidad", "OK");
+        		return false;
+    		}	
+
+
 			return true;
 		}
 
@@ -48,7 +60,7 @@ namespace Practical_Work_2
 
 		private async void PrivacyPolicyTapped(object sender, EventArgs e)
 		{
-			await DisplayAlert("Privacy Policy", "Your privacy policy text here...", "OK");
+			await DisplayAlert("Privacy Policy", "all the information of the registrations can be seen in a csv document.", "OK");
 		}
 
 		private async void ExitClicked(object sender, EventArgs e)

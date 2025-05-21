@@ -7,7 +7,8 @@ namespace Practical_Work_2
 
 	public partial class Conversor : ContentPage
 	{
-		private Converter mainconverter ;
+		private readonly string _usersFile = Path.Combine(FileSystem.AppDataDirectory, "users.csv");
+		private Converter mainconverter;
 
 		public Conversor()
 		{
@@ -87,6 +88,40 @@ namespace Practical_Work_2
     		}
     	}
 
+		private async void OperationsClicked(object sender, EventArgs e)
+		{
+    		var currentUsername = Preferences.Get("currentUser", "");
+    		var userLine = File.ReadAllLines(_usersFile)
+        	.FirstOrDefault(u => u.Split(',')[1] == currentUsername);
 
+    		if (userLine != null)
+    		{
+        		var userData = userLine.Split(',');
+        		await DisplayAlert("Tus operaciones",
+            		$"Nombre: {userData[0]}\n" +
+            		$"Usuario: {userData[1]}\n" +
+            		$"Contraseña: {userData[2]}\n" +
+            		$"Operaciones: {userData[3]}", 
+            		"OK");
+    		}
+		}
+
+		private void UpdateOperationsCount()
+		{
+    		var currentUsername = Preferences.Get("currentUser", "");
+    		var lines = File.ReadAllLines(_usersFile);
+    
+    		for (int i = 0; i < lines.Length; i++)
+    		{
+       			if (lines[i].Split(',')[1] == currentUsername)
+        		{
+            		var data = lines[i].Split(',');
+            		data[3] = (int.Parse(data[3]) + 1).ToString();
+            		lines[i] = string.Join(",", data);
+            		break;
+        		}
+    		}
+    	File.WriteAllLines(_usersFile, lines);
+		}
 	}
 }
