@@ -11,7 +11,7 @@
             <Button Text="Sign in" 
                     BackgroundColor="Transparent"
                     TextColor="black"
-                    Clicked="OnSignInClicked"/>
+                    Clicked="SignInClicked"/>
             
             <Button Text="Exit" 
                     BackgroundColor="Transparent"

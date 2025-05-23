@@ -5,7 +5,7 @@ namespace Practical_Work_2;
 
 public partial class RegisterPage : ContentPage
 {
-      private readonly string _usersFile = Path.Combine(Directory.GetCurrentDirectory(), "users.csv");
+      private readonly string UsersFile = Path.Combine(Directory.GetCurrentDirectory(), "users.csv");
 
     public RegisterPage()
     {
@@ -40,7 +40,7 @@ public partial class RegisterPage : ContentPage
                 return false;
             }
 
-            if (File.ReadAllLines(_usersFile).Any(u => u.Split(',')[1] == Username.Text))
+            if (File.ReadAllLines(UsersFile).Any(u => u.Split(',')[1] == Username.Text))
             {
                 DisplayAlert("Error", "El usuario ya existe", "OK");
                 return false;
@@ -59,7 +59,7 @@ public partial class RegisterPage : ContentPage
     {
         try
         {
-            using (StreamWriter sw = File.AppendText(_usersFile))
+            using (StreamWriter sw = File.AppendText(UsersFile))
             {
                 var line = $"{user.Name},{user.Username}," +
                           $"{user.Password},{user.OperationsCount}," +
@@ -84,7 +84,7 @@ public partial class RegisterPage : ContentPage
         if (confirm) Application.Current.Quit();
     }
 
-    private async void OnSignInClicked(object sender, EventArgs e)
+    private async void SignInClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//MainPage");
     }

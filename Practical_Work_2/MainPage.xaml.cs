@@ -5,7 +5,7 @@ namespace Practical_Work_2;
 
 public partial class MainPage : ContentPage
 {
-      private readonly string _usersFile = Path.Combine(Directory.GetCurrentDirectory(), "users.csv");
+      private readonly string UsersFile = Path.Combine(Directory.GetCurrentDirectory(), "users.csv");
 
 	public MainPage()
 	{
@@ -16,7 +16,6 @@ public partial class MainPage : ContentPage
 	private async void RegisterClicked(object sender, EventArgs e)
 	{
 		await Shell.Current.GoToAsync(nameof(RegisterPage));
-		Console.WriteLine($"Ruta del archivo: {_usersFile}");
     }
 
     private async void ExitClicked(object sender, EventArgs e)
@@ -32,13 +31,13 @@ public partial class MainPage : ContentPage
     {
         try
         {
-            if (!File.Exists(_usersFile))
+            if (!File.Exists(UsersFile))
             {
                 await DisplayAlert("Error", "No hay usuarios registrados", "OK");
                 return;
             }
 
-            var users = File.ReadAllLines(_usersFile);
+            var users = File.ReadAllLines(UsersFile);
             var user = users.FirstOrDefault(u => 
                 u.Split(',')[1] == Username.Text && 
                 u.Split(',')[2] == Password.Text);
@@ -63,7 +62,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    private async void ForgotPasswordTapped(object sender, EventArgs e)
+    private async void ForgotPasswordClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync(nameof(ForgotPassword));
     }

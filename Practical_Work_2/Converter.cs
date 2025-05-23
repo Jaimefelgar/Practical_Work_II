@@ -7,7 +7,7 @@ namespace Practical_Work_2
     public class Converter
     {
         private List<Conversion> operations;
-        public List<Conversion> Operations => operations; // Nueva propiedad pública
+        public List<Conversion> Operations => operations;
 
         public Converter()
         {

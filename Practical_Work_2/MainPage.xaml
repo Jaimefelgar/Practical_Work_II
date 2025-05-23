@@ -41,7 +41,7 @@
 
                 <Label Text="Forgot Password?" HorizontalOptions="Center">
             <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="ForgotPasswordTapped"/>
+                <TapGestureRecognizer Tapped="ForgotPasswordClicked"/>
             </Label.GestureRecognizers>
         </Label>
         

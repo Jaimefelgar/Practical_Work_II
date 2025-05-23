@@ -10,6 +10,11 @@
                     BackgroundColor="Transparent"
                     TextColor="Black"
                     Clicked="BackButtonClicked"/>
+
+                    <Button Text="Exit" 
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    Clicked="ExitButtonClicked"/>
         </HorizontalStackLayout>
 
         <VerticalStackLayout Grid.Row="1" Padding="20" Spacing="20">

@@ -5,10 +5,7 @@ namespace Practical_Work_2;
 
 public partial class Conversor : ContentPage
 {
-    private readonly string _usersFile = Path.Combine(
-    Directory.GetCurrentDirectory(), 
-    "users.csv"
-);
+    private readonly string UsersFile = Path.Combine(Directory.GetCurrentDirectory(),"users.csv");
     private Converter mainConverter;
 
     public Conversor()
@@ -34,13 +31,13 @@ public partial class Conversor : ContentPage
         if (confirm) Application.Current.Quit();
     }
 
-    private void OnNumberButtonClicked(object sender, EventArgs e)
+    private void NumberButtonClicked(object sender, EventArgs e)
     {
         var button = (Button)sender;
         DisplayLabel.Text += button.CommandParameter.ToString();
     }
 
-    private async void OnConversionButtonClicked(object sender, EventArgs e)
+    private async void ConversionButtonClicked(object sender, EventArgs e)
     {
         var button = (Button)sender;
         if (!int.TryParse(button.CommandParameter?.ToString(), out int opIndex)) return;
@@ -87,7 +84,7 @@ public partial class Conversor : ContentPage
     try
     {
         var currentUser = Preferences.Get("currentUser", "");
-        var userLine = File.ReadLines(_usersFile)
+        var userLine = File.ReadLines(UsersFile)
             .FirstOrDefault(u => u.Split(',')[1] == currentUser);
 
         if (userLine != null)
@@ -112,7 +109,7 @@ public partial class Conversor : ContentPage
         try
         {
             var currentUser = Preferences.Get("currentUser", "");
-            var lines = File.ReadAllLines(_usersFile).ToList();
+            var lines = File.ReadAllLines(UsersFile).ToList();
 
             for (int i = 0; i < lines.Count; i++)
             {
@@ -125,7 +122,7 @@ public partial class Conversor : ContentPage
                 }
             }
             
-            File.WriteAllLines(_usersFile, lines);
+            File.WriteAllLines(UsersFile, lines);
         }
         catch (Exception ex)
         {

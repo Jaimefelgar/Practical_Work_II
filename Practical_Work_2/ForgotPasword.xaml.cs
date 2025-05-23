@@ -5,7 +5,7 @@ namespace Practical_Work_2
 {
     public partial class ForgotPassword : ContentPage
     {
-      private readonly string _usersFile = Path.Combine(Directory.GetCurrentDirectory(), "users.csv");
+      private readonly string UsersFile = Path.Combine(Directory.GetCurrentDirectory(), "users.csv");
         
         public ForgotPassword()
         {
@@ -61,9 +61,9 @@ namespace Practical_Work_2
 
         private User FindUser(string username)
         {
-            if (!File.Exists(_usersFile)) return null;
+            if (!File.Exists(UsersFile)) return null;
             
-            foreach (var line in File.ReadAllLines(_usersFile))
+            foreach (var line in File.ReadAllLines(UsersFile))
             {
                 var parts = line.Split(',');
                 if (parts.Length >= 2 && parts[1] == username)
@@ -85,7 +85,7 @@ namespace Practical_Work_2
         {
             try
             {
-                var lines = File.ReadAllLines(_usersFile);
+                var lines = File.ReadAllLines(UsersFile);
                 for (int i = 0; i < lines.Length; i++)
                 {
                     var parts = lines[i].Split(',');
@@ -93,7 +93,7 @@ namespace Practical_Work_2
                     {
                         parts[2] = newPassword;
                         lines[i] = string.Join(",", parts);
-                        File.WriteAllLines(_usersFile, lines);
+                        File.WriteAllLines(UsersFile, lines);
                         return true;
                     }
                 }

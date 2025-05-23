@@ -30,6 +30,5 @@
       
         ContentTemplate="{DataTemplate local:Operations}"
         Route="Operations" />
-
-    
+        
 </Shell>
