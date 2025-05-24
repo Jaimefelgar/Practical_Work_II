@@ -24,38 +24,6 @@ namespace Practical_Work_2
             };
         }
         
-        public int Exit()
-        {
-            return this.operations.Count + 1;
-        }
-
-        public int GetNumberOperations()
-        {
-            return this.operations.Count;
-        }
-        
-        public int PrintOperations()
-        {
-            Console.Clear();
-
-            Console.WriteLine("--------------------------------------");
-
-            for (int i = 1; i <= this.operations.Count; i++)
-            {
-                Console.WriteLine($" {i}. {this.operations[i - 1].GetDefinition()}");
-            }
-
-            Console.WriteLine($" {this.Exit()}. Exit");
-            Console.WriteLine("--------------------------------------");
-
-            string? tmp = Console.ReadLine();
-            if (tmp == "") return this.Exit();
-
-            int option = int.Parse(tmp);
-
-            return (option < 1 || option > this.GetNumberOperations()) ? this.Exit(): option;
-        }
-
         
         public string PerformConversion(int op, string input)
         {
@@ -68,11 +36,6 @@ namespace Practical_Work_2
                 return this.operations[op-1].Change(input,bits);
             }
             return this.operations[op-1].Change(input);
-        }
-
-        public void PrintConversion(int op, string input, string output)
-        {
-            this.operations[op-1].PrintConversion(input, output);
         }
     }
 }

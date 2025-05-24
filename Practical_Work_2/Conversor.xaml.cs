@@ -5,13 +5,13 @@ namespace Practical_Work_2;
 
 public partial class Conversor : ContentPage
 {
-    private readonly string UsersFile = Path.Combine(Directory.GetCurrentDirectory(),"users.csv");
+    private readonly string UsersFile = Path.Combine(Directory.GetCurrentDirectory(),"users.csv");//path of users.csv file.
     private Converter mainConverter;
 
     public Conversor()
     {
         InitializeComponent();
-        mainConverter = new Converter();
+        mainConverter = new Converter();//
     }
 
     private async void LogoutClicked(object sender, EventArgs e)
@@ -34,7 +34,7 @@ public partial class Conversor : ContentPage
     private void NumberButtonClicked(object sender, EventArgs e)
     {
         var button = (Button)sender;
-        DisplayLabel.Text += button.CommandParameter.ToString();
+        DisplayLabel.Text += button.CommandParameter.ToString();//writes the user numnbers 
     }
 
     private async void ConversionButtonClicked(object sender, EventArgs e)
@@ -44,17 +44,18 @@ public partial class Conversor : ContentPage
 
         try
         {
-            var conversion = mainConverter.Operations[opIndex];
+            /* we send a number associated to every type of conversion to the class conversion with a list of the different conversions and make the one selectef*/
+            var conversion = mainConverter.Operations[opIndex]; 
             conversion.validate(DisplayLabel.Text);
 
-            if (conversion.NeedBitSize())
+            if (conversion.NeedBitSize()) // if the conversion needs a bitsize.
             {
-                var bits = await GetBitSize(conversion.GetName());
-                if (bits > 0) DisplayLabel.Text = conversion.Change(DisplayLabel.Text, bits);
+                var bits = await GetBitSize(conversion.GetName()); // a way to select the number of bits
+                if (bits > 0) DisplayLabel.Text = conversion.Change(DisplayLabel.Text, bits); //an error message in case the number of bits is not enough.
             }
             else
             {
-                DisplayLabel.Text = conversion.Change(DisplayLabel.Text);
+                DisplayLabel.Text = conversion.Change(DisplayLabel.Text);//write solution.
             }
             
             UpdateOperationsCount();

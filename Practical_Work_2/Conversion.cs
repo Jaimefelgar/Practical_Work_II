@@ -26,12 +26,6 @@ namespace Practical_Work_2
             this.bitsize = bitsize;
         }
 
-        public void PrintConversion(string input, string output)
-        {
-            Console.Clear();
-            Console.WriteLine($"{this.name} representation of {input} is {output}");
-            Console.ReadLine();
-        }
 
         public abstract String Change(string input);
         
