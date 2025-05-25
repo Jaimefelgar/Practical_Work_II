@@ -31,18 +31,18 @@ public partial class MainPage : ContentPage
     {
         try
         {
-            if (!File.Exists(UsersFile))
+            if (!File.Exists(UsersFile))//if file doesn't exist
             {
                 await DisplayAlert("Error", "No hay usuarios registrados", "OK");
                 return;
             }
 
-            var users = File.ReadAllLines(UsersFile);
+            var users = File.ReadAllLines(UsersFile);//read user and password
             var user = users.FirstOrDefault(u => 
                 u.Split(',')[1] == Username.Text && 
                 u.Split(',')[2] == Password.Text);
 
-            if (user != null)
+            if (user != null)//if the credentials are okey
             {
                 Preferences.Set("currentUser", Username.Text);
                 await Shell.Current.GoToAsync(nameof(Conversor));

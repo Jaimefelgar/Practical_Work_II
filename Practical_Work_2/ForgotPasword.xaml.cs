@@ -28,7 +28,7 @@ namespace Practical_Work_2
         {
             if (!NewPassword.IsVisible)
             {
-                // Fase 1: Verificar usuario
+                
                 var user = FindUser(Username.Text);
 
                 if (user == null)
@@ -37,14 +37,15 @@ namespace Practical_Work_2
                     return;
                 }
 
-                // Mostrar campos de contraseña
+                
                 NewPassword.IsVisible = true;
                 ConfirmNewPassword.IsVisible = true;
                 SubmitButton.Text = "Cambiar contraseña";
             }
             else
             {
-                // Fase 2: Cambiar contraseña
+                //Diferent types of messages.
+             
                 if (NewPassword.Text != ConfirmNewPassword.Text)
                 {
                     await DisplayAlert("Error", "Las contraseñas no coinciden", "OK");
@@ -59,7 +60,7 @@ namespace Practical_Work_2
             }
         }
 
-        private User FindUser(string username)
+        private User FindUser(string username)//searchs the user
         {
             if (!File.Exists(UsersFile)) return null;
             
@@ -81,7 +82,7 @@ namespace Practical_Work_2
             return null;
         }
 
-        private bool UpdatePassword(string username, string newPassword)
+        private bool UpdatePassword(string username, string newPassword)//change the password
         {
             try
             {

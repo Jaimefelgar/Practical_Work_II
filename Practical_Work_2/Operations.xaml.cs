@@ -12,6 +12,7 @@ public partial class Operations : ContentPage
 
     private void LoadUserData(string name, string username, string password, string operations)
     {
+        //Displays user information.
         lblName.Text = $"Name: {name}";
         lblUsername.Text = $"Ussername: {username}";
         lblPassword.Text = $"Password: {password}";

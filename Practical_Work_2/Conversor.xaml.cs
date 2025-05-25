@@ -68,6 +68,7 @@ public partial class Conversor : ContentPage
 
     private async Task<int> GetBitSize(string conversionName)
     {
+        //Asks for a number of bits
         var bitsStr = await DisplayPromptAsync(
             "Configuración",
             $"Bits requeridos para {conversionName}:",
@@ -84,9 +85,9 @@ public partial class Conversor : ContentPage
    {
     try
     {
-        var currentUser = Preferences.Get("currentUser", "");
+        var currentUser = Preferences.Get("currentUser", "");//Gets the data of the user
         var userLine = File.ReadLines(UsersFile)
-            .FirstOrDefault(u => u.Split(',')[1] == currentUser);
+            .FirstOrDefault(u => u.Split(',')[1] == currentUser);//reads all the users and compares with the dat of the user.
 
         if (userLine != null)
         {
@@ -110,11 +111,11 @@ public partial class Conversor : ContentPage
         try
         {
             var currentUser = Preferences.Get("currentUser", "");
-            var lines = File.ReadAllLines(UsersFile).ToList();
+            var lines = File.ReadAllLines(UsersFile).ToList();//reads the user information and transforms it in a list
 
             for (int i = 0; i < lines.Count; i++)
             {
-                if (lines[i].Split(',')[1] == currentUser)
+                if (lines[i].Split(',')[1] == currentUser)//adds one to the operations information.
                 {
                     var data = lines[i].Split(',');
                     data[3] = (int.Parse(data[3]) + 1).ToString();

@@ -12,11 +12,11 @@ namespace Practical_Work_2
             bool isNegative = input[0] == '-';
             int startIndex = isNegative ? 1 : 0;
 
-            // Validar formato del signo negativo
+            
             if (isNegative && input.Length == 1)
                 throw new FormatException("Bad Format: not valid number");
 
-            // Validar caracteres válidos
+        
             for (int i = startIndex; i < input.Length; i++)
             {
                 if (!char.IsDigit(input[i]))
